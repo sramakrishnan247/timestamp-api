@@ -1,7 +1,13 @@
 var express = require('express');
 var app = express();
 var moment = require('moment');
-var port = process.env.PORT || 8080;    
+var port = process.env.PORT || 8080;  
+
+app.get('/',function(req,res) {
+	res.send("add string to url!!");
+	// body...
+})
+
 app.get('/:ourdate', function (req, res) {
 	var ourdate = req.params.ourdate;
 	var unixdate;
@@ -32,5 +38,5 @@ app.get('/:ourdate', function (req, res) {
 })
 
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Example app listening on port 8080!')
 })
