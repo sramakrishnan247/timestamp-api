@@ -1,9 +1,7 @@
 var express = require('express');
 var app = express();
 var moment = require('moment');
-
-app.set('view engine', 'ejs');
-
+var port = process.env.PORT || 8080;    
 app.get('/:ourdate', function (req, res) {
 	var ourdate = req.params.ourdate;
 	var unixdate;
@@ -33,6 +31,6 @@ app.get('/:ourdate', function (req, res) {
   	// res.render('hello',{ourdate:ourdate, unixdate:unixdate, humandate:humandate})
 })
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!')
 })
