@@ -1,7 +1,9 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function (req, res) {
+app.get('/:ourdate', function (req, res) {
+	var ourdate = req.params.ourdate;
+	console.log(ourdate);			
   res.send('Hello World!')
 })
 
